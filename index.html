@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>lml</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lml">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="lml">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lml">
+  
+    <link rel="alternate" href="/atom.xml" title="lml" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lml</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-题解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/19/题解/" class="article-date">
+  <time datetime="2017-10-19T12:49:33.009Z" itemprop="datePublished">2017-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/19/题解/">noip模拟水题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="T1——原创题"><a href="#T1——原创题" class="headerlink" title="T1——原创题"></a>T1——原创题</h2><p>在这个世界上,一个人的好友可能和他作对,变成敌人;他用慈爱所培<br>养起来的儿女也可能变的不忠不孝;那些我们最感密切和亲近的人, 那些我们用全部幸福和名誉所痴信的人,都可能会舍弃忠诚而成为叛<br>逆.在这个自私的世界上,一个人唯一不自私的朋友,唯一不抛弃他的<br>朋友,唯一不忘恩负义的朋友,就是他的犬。<br>但是，一天，我来到了一个公园。我发现这里有 n 群狗，但这里<br>的狗都对我不友好，我想击败几群狗，我要花 k[i][j]的时间并消耗 w[i][j]<br>的体力值来打败这群狗的一部分。<br>现在我想知道自己最多能打赢多少群狗。<br>输入：第一行是我的体力值 x，接着是 n,m（m 表示打败狗有几个程<br>度）；接下来 n 行，每行 m 个数，表示打狗消耗的体力值 w[i][j]值；<br>接下来 n 行，每行 m 个数，表示打败狗的期望值 k[i][j]值。<br>输出：一个数，表示一共可以打败几群狗。（保留 2 位小数）<br>样例<br>输入：fight.in<br>By lml<br>（1）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">10 3 3</div><div class="line">1 2 3</div><div class="line">1 3 5</div><div class="line">1 2 4</div><div class="line">0.1 1 1</div><div class="line">0.9 0.95 1</div><div class="line">0 0 0</div></pre></td></tr></table></figure></p>
+<p>（2）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">13 4 2</div><div class="line">6 9</div><div class="line">0 6</div><div class="line">7 9</div><div class="line">7 9</div><div class="line">0.80 0.80</div><div class="line">0.20 0.70</div><div class="line">0.80 0.90</div><div class="line">0.20 0.30</div></pre></td></tr></table></figure></p>
+<h2 id="输出-fight-out"><a href="#输出-fight-out" class="headerlink" title="输出 fight.out"></a>输出 fight.out</h2><p>（1）2.00<br>（2）1.80<br>数据范围<br>40% x&lt;=20,n,m&lt;=10;<br>100% x&lt;=300,n&lt;=100，m&lt;=70;<br>保证数据纯随机。<br>吐槽（人是打不赢狗的）。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>因为这是原创题，我不知道部分分。<br>正解是三维dp<br>而且是由以前的二维升维来的，我们可以用dp[i][j][k]来记录当取第i群狗第j个还剩k点体力时的状态。<br>而转移<br>dp[i][j][k-f[i][j]]=<br>max(dp[i-1][jj][k]+w[i][j],dp[i][j][k-f[i][j]]);<br>jj由上一个的状态转移。<br>相信大佬们肯定ac。<br>附代码<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n,m,x,f[<span class="number">200</span>][<span class="number">200</span>];</div><div class="line"><span class="keyword">double</span> w[<span class="number">200</span>][<span class="number">200</span>],dp[<span class="number">200</span>][<span class="number">200</span>][<span class="number">500</span>],maxn;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">//freopen("fight.in","r",stdin);</span></div><div class="line">	<span class="comment">//freopen("fight.out","w",stdout);</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;x,&amp;n,&amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;f[i][j]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)<span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;w[i][j]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=x;k&gt;=<span class="number">0</span>;k--)</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> qwe=<span class="number">1</span>;qwe&lt;=m;qwe++)</div><div class="line">				&#123;dp[i][j][k]=max(dp[i][j][k],dp[i<span class="number">-1</span>][qwe][k]);</div><div class="line">				dp[i][j][k-f[i][j]]=max(dp[i<span class="number">-1</span>][qwe][k]+w[i][j],dp[i][j][k-f[i][j]]);&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</div><div class="line">	maxn=max(dp[i][j][<span class="number">0</span>],maxn);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%.2lf"</span>,maxn);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>毕竟是自己想出来的，所以要写下来。</p>
+<h2 id="T2——来自luogu-1462-1951"><a href="#T2——来自luogu-1462-1951" class="headerlink" title="T2——来自luogu 1462/1951"></a><em>T2——来自luogu 1462/1951</em></h2><p>我来到了一个神奇的地方，这里有很多宝藏，但宝藏在 n 号房间，<br>这里有 n 个房间，共有 m 条路，每条路上有机关，我走过会受伤，<br>掉 x 点血。每个房间都有防御装置，我要进去的话要花费 ci 点体力，<br>我现在想去 n 号房间，但我的有一定的血量值，所以我不能一直走。<br>现在，我想知道我所经过的房间中最多消耗的体力的最小是多少。<br>我初始在 1 号房间。<br>其实 n 号房间就在 1 号房间附近。（什么用都没有）<br>输入：find.in<br>第一行是 n，m，接着是我的血 x。<br>第二行是 n 个数，表示进入每个房间的消耗体力值。房间只当我进入<br>时耗费体力。<br>接下来的 m 行，每行三个数 a，b，c；表示 a,b 之间有一条长度为 c<br>的路，耗费 c 点血，双向边。<br>输出：find.out 一个数，表示我最少耗费多少体力。若我在到达前没血了，输出-1。<br>样例<br>输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">4 4 8</div><div class="line">8 5 6 10</div><div class="line">2 1 2</div><div class="line">2 4 1</div><div class="line">1 3 4</div><div class="line">3 4 3</div></pre></td></tr></table></figure></p>
+<p>输出<br>10<br>数据范围：保证数据纯随机。<br>对于 30%的数据，满足 n≤200，m≤10000，b≤200<br>对于 100%的数据，满足 n≤10000，m≤50000，b≤1000000000<br>良心话，这里数据全随机，而且没几组大的。<br>想法：<br><strong> 所经过的房间中最多消耗的体力的最小是多少</strong><br>很明显是二分，并跑spfa就可以过了。<br><strong>我还是要%楼下高一大佬，这么快就学指针了，我们那时才学数组</strong>。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n,m,tot,to[<span class="number">100010</span>],head[<span class="number">100010</span>],nx[<span class="number">100010</span>],b,co[<span class="number">10010</span>],bloom[<span class="number">100010</span>],ans=<span class="number">-1</span>,qwe[<span class="number">10010</span>];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> dis[<span class="number">50010</span>];</div><div class="line"><span class="keyword">bool</span> vis[<span class="number">50010</span>];</div><div class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</div><div class="line">	x=<span class="number">0</span>;<span class="keyword">int</span> f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span> (ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) &#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;x*=f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</div><div class="line">	to[++tot]=b;</div><div class="line">	nx[tot]=head[a];</div><div class="line">	head[a]=tot;</div><div class="line">	bloom[tot]=c;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">spfa</span><span class="params">(<span class="keyword">int</span> mid)</span></span>&#123;</div><div class="line">	<span class="built_in">memset</span>(dis,<span class="number">0x7f</span>,<span class="keyword">sizeof</span>(dis));</div><div class="line">	<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</div><div class="line">	dis[<span class="number">1</span>]=<span class="number">0</span>;vis[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">	q.push(<span class="number">1</span>);</div><div class="line">	<span class="keyword">while</span>(!q.empty())&#123;</div><div class="line">		<span class="keyword">int</span> x=q.front();q.pop();vis[x]=<span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=head[x];i;i=nx[i])&#123;</div><div class="line">			<span class="keyword">int</span> t=to[i];</div><div class="line">			<span class="keyword">if</span>(co[t]&gt;mid)<span class="keyword">continue</span>;</div><div class="line">			<span class="keyword">if</span>(bloom[i]+dis[x]&lt;dis[t])&#123;</div><div class="line">				dis[t]=bloom[i]+dis[x];</div><div class="line">				<span class="keyword">if</span>(!vis[t])&#123;</div><div class="line">					q.push(t);vis[t]=<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> dis[n]&lt;b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">//freopen("find.in","r",stdin);</span></div><div class="line">	<span class="comment">//freopen("find.out","w",stdout);</span></div><div class="line">	read(n);read(m);read(b);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)read(co[i]),qwe[i]=co[i];</div><div class="line">	sort(qwe+<span class="number">1</span>,qwe+<span class="number">1</span>+n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</div><div class="line">		<span class="keyword">int</span> a,b,c;</div><div class="line">		read(a);read(b);read(c);</div><div class="line">		add(a,b,c);add(b,a,c);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> l=<span class="number">1</span>,r=n;</div><div class="line">	<span class="keyword">while</span>(l&lt;=r)&#123;</div><div class="line">		<span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(spfa(qwe[mid]))ans=qwe[mid],r=mid<span class="number">-1</span>;</div><div class="line">		<span class="keyword">else</span> l=mid+<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(ans==<span class="number">0</span>||ans==<span class="number">-1</span>)&#123;<span class="built_in">printf</span>(<span class="string">"-1"</span>);<span class="keyword">return</span> <span class="number">0</span>;&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>##<em>T3———大水题</em><br>1.一遍bfs就可以过了,但有些要特判。<br>2.dfs+剪枝</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/19/题解/" data-id="cj8yiag7v0001w0fjrl0y3jyz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/noip/">noip</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/19/hello-world/" class="article-date">
+  <time datetime="2017-10-19T11:07:18.518Z" itemprop="datePublished">2017-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/19/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/19/hello-world/" data-id="cj8yiag7l0000w0fjuo6ljov0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/noip/">noip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/noip/" style="font-size: 10px;">noip</a> <a href="/tags/题解/" style="font-size: 10px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/19/题解/">noip模拟水题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lml<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
