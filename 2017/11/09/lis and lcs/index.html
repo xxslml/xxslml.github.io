@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Lis  and Lcs | lml</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。lis：定义d[k]:长度为k的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。注意d中元素是单调递增的，下面要用到这个性质。首先len = 1,d[1] = a[1],然后对a[i]:若a[i]&amp;gt;d[len]，那么len++，d[len] = a[i];否则，我们要从d[1">
+  <meta name="description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。">
 <meta name="keywords" content="模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lis  and Lcs">
 <meta property="og:url" content="http://yoursite.com/2017/11/09/lis and lcs/index.html">
 <meta property="og:site_name" content="lml">
-<meta property="og:description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。lis：定义d[k]:长度为k的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。注意d中元素是单调递增的，下面要用到这个性质。首先len = 1,d[1] = a[1],然后对a[i]:若a[i]&amp;gt;d[len]，那么len++，d[len] = a[i];否则，我们要从d[1">
-<meta property="og:updated_time" content="2017-11-09T12:14:55.375Z">
+<meta property="og:description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。">
+<meta property="og:updated_time" content="2017-11-09T12:45:17.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lis  and Lcs">
-<meta name="twitter:description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。lis：定义d[k]:长度为k的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。注意d中元素是单调递增的，下面要用到这个性质。首先len = 1,d[1] = a[1],然后对a[i]:若a[i]&amp;gt;d[len]，那么len++，d[len] = a[i];否则，我们要从d[1">
+<meta name="twitter:description" content="lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。用dp的方法是n^2的。">
   
     <link rel="alternative" href="/atom.xml" title="lml" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。<br>用dp的方法是n^2的。<br>lis：<br>定义d[k]:长度为k的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。<br>注意d中元素是单调递增的，下面要用到这个性质。<br>首先len = 1,d[1] = a[1],然后对a[i]:若a[i]&gt;d[len]，那么len++，d[len] = a[i];<br>否则，我们要从d[1]到d[len-1]中找到一个j，满足d[j-1]<a[i]<d[j],则根据d的定义，我们需要更新长度为j的上升子序列的最末元素（使之为最小的）即 d[j]="a[i];" 最终答案就是len="" 利用d的单调性，在查找j的时候可以二分查找，从而时间复杂度为nlogn。="" lcs：="" 我们可以离散一下="" 我们把第一个串离散化后的数组是满足上升，反过来，满足上升的也就是满足原串的排列顺序的，现在的问题就变成了求一个最长不下降序列。="" <figure="" class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100010</span>;</div><div class="line"><span class="keyword">int</span> n,a[maxn],b[maxn],f[maxn],<span class="built_in">stack</span>[maxn],top;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> l=<span class="number">0</span>,r=top,ans;</div><div class="line">	<span class="keyword">while</span>(l&lt;=r)&#123;</div><div class="line">		<span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">stack</span>[mid]&lt;x)ans=mid,l=mid+<span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span> r=mid<span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">stack</span>[ans+<span class="number">1</span>]=x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]),f[a[i]]=i;</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]),b[i]=f[b[i]];</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">stack</span>[top]&lt;b[i])<span class="built_in">stack</span>[++top]=b[i];</div><div class="line">		<span class="keyword">else</span> find(b[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,top);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;<span class="comment">//lcs,不离散就是lis</span></div></pre></td></tr></table></a[i]<d[j],则根据d的定义，我们需要更新长度为j的上升子序列的最末元素（使之为最小的）即></p>
+        <p>lis（最长上升子序列）和lcs（最长公共子序列）是经典的题目。<br>用dp的方法是n^2的。<br><a id="more"></a><br>lis：<br>定义d[k]:长度为k的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。<br>注意d中元素是单调递增的，下面要用到这个性质。<br>首先len = 1,d[1] = a[1],然后对a[i]:若a[i]&gt;d[len]，那么len++，d[len] = a[i];<br>否则，我们要从d[1]到d[len-1]中找到一个j，满足d[j-1]<a[i]<d[j],则根据d的定义，我们需要更新长度为j的上升子序列的最末元素（使之为最小的）即 d[j]="a[i];" 最终答案就是len="" 利用d的单调性，在查找j的时候可以二分查找，从而时间复杂度为nlogn。="" lcs：="" 我们可以离散一下="" 我们把第一个串离散化后的数组是满足上升，反过来，满足上升的也就是满足原串的排列顺序的，现在的问题就变成了求一个最长不下降序列。="" <figure="" class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100010</span>;</div><div class="line"><span class="keyword">int</span> n,a[maxn],b[maxn],f[maxn],<span class="built_in">stack</span>[maxn],top;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> l=<span class="number">0</span>,r=top,ans;</div><div class="line">	<span class="keyword">while</span>(l&lt;=r)&#123;</div><div class="line">		<span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">stack</span>[mid]&lt;x)ans=mid,l=mid+<span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span> r=mid<span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">stack</span>[ans+<span class="number">1</span>]=x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]),f[a[i]]=i;</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]),b[i]=f[b[i]];</div><div class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">stack</span>[top]&lt;b[i])<span class="built_in">stack</span>[++top]=b[i];</div><div class="line">		<span class="keyword">else</span> find(b[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,top);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;<span class="comment">//lcs,不离散就是lis</span></div></pre></td></tr></table></a[i]<d[j],则根据d的定义，我们需要更新长度为j的上升子序列的最末元素（使之为最小的）即></p>
 <p>题目<br><a href="http://codevs.cn/problem/3955/" target="_blank" rel="external">T1</a>   <a href="https://www.luogu.org/problemnew/show/1439" target="_blank" rel="external">T2</a></p>
 
       
@@ -421,6 +421,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">模板</a>
               </li>
              
@@ -430,14 +438,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">noip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
             
             <div class="clearfix"></div>
