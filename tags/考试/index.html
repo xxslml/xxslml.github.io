@@ -6,21 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>10.20考试 | lml</title>
+  <title>Tag: 考试 | lml</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="T1 求给定两个起点和终点，求公共路径长度。">
-<meta name="keywords" content="最短路,数论">
-<meta property="og:type" content="article">
-<meta property="og:title" content="10.20考试">
-<meta property="og:url" content="http://yoursite.com/2017/10/20/10-20/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lml">
+<meta property="og:url" content="http://yoursite.com/tags/考试/index.html">
 <meta property="og:site_name" content="lml">
-<meta property="og:description" content="T1 求给定两个起点和终点，求公共路径长度。">
-<meta property="og:image" content="http://a1.qpic.cn/psb?/V14BjkU23Kbdj5/xLhmmaLw4FdcTmKbq.YIJ*H0KJFZ2bEQYUwVCsp2E3U!/b/dJwAAAAAAAAA&bo=4QFYAQAAAAADAJw!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-11-03T09:17:58.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="10.20考试">
-<meta name="twitter:description" content="T1 求给定两个起点和终点，求公共路径长度。">
-<meta name="twitter:image" content="http://a1.qpic.cn/psb?/V14BjkU23Kbdj5/xLhmmaLw4FdcTmKbq.YIJ*H0KJFZ2bEQYUwVCsp2E3U!/b/dJwAAAAAAAAA&bo=4QFYAQAAAAADAJw!&rf=viewer_4">
+<meta name="twitter:title" content="lml">
   
     <link rel="alternative" href="/atom.xml" title="lml" type="application/atom+xml">
   
@@ -140,188 +133,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-10-20" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      10.20考试
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/11/day1感想/" class="archive-article-date">
+  	<time datetime="2017-11-11T07:05:35.407Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/11/day1感想/">2017day1感想及题目</a>
     </h1>
   
 
-        
-        <a href="/2017/10/20/10-20/" class="archive-article-date">
-  	<time datetime="2017-10-20T12:37:07.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><hr>
-<p>求给定两个起点和终点，求公共路径长度。<br><a id="more"></a><br>看到时很迷，即使hjl大佬说了也没理解，后来看了下题解。<br>就是跑四遍最短路（spfa或dijkstra，据说dijkstra快一些）。<br>方法：枚举x,y,判断其是不是都在最短路上,并对其距离取max。</p>
-<p><strong>上h大佬代码</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;deque&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> re register int</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> fp(i,a,b) for(re i=a,I=b;i&lt;=I;++i)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> chkmax(a,b) (a&lt;b?a=b:0)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> file(s) freopen(s<span class="meta-string">".in"</span>,<span class="meta-string">"r"</span>,stdin),freopen(s<span class="meta-string">".out"</span>,<span class="meta-string">"w"</span>,stdout)</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> ss[<span class="number">1</span>&lt;&lt;<span class="number">17</span>],*A=ss,*B=ss;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">gc</span><span class="params">()</span></span>&#123;<span class="keyword">if</span>(A==B)&#123;B=(A=ss)+fread(ss,<span class="number">1</span>,<span class="number">1</span>&lt;&lt;<span class="number">17</span>,<span class="built_in">stdin</span>);<span class="keyword">if</span>(A==B)<span class="keyword">return</span> EOF;&#125;<span class="keyword">return</span>*A++;&#125;</div><div class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;<span class="title">inline</span> <span class="title">void</span> <span class="title">sdf</span>(<span class="title">T</span>&amp;<span class="title">x</span>)&#123;</span></div><div class="line">    <span class="keyword">char</span> c;re y=<span class="number">1</span>;<span class="keyword">while</span>(c=gc(),c&lt;<span class="number">48</span>||<span class="number">57</span>&lt;c)<span class="keyword">if</span>(c==<span class="string">'-'</span>)y=<span class="number">-1</span>;x=c^<span class="number">48</span>;</div><div class="line">    <span class="keyword">while</span>(c=gc(),<span class="number">47</span>&lt;c&amp;&amp;c&lt;<span class="number">58</span>)x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>);x*=y;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1505</span>,M=<span class="number">2250010</span>,inf=<span class="number">1e9</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> arr[N];</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edges</span>&#123;</span><span class="keyword">int</span> nx,to,w;&#125;e[M&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> n,m,s1,s2,t1,t2,tot,ans;arr S1,S2,T1,T2,fi,vis;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">const</span> re&amp;a)</span></span>&#123;<span class="keyword">return</span> a&lt;<span class="number">0</span>?-a:a;&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(re u,re v,re w)</span></span>&#123;e[++tot]=(edges)&#123;fi[u],v,w&#125;;fi[u]=tot;&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">spfa</span><span class="params">(re s,re*dis)</span></span>&#123;</div><div class="line">    fp(i,<span class="number">1</span>,n)dis[i]=inf,vis[i]=<span class="number">0</span>;dis[s]=<span class="number">0</span>;</div><div class="line">    <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt;q;q.push_back(s);re u,v;</div><div class="line">    <span class="keyword">while</span>(!q.empty())&#123;</div><div class="line">        u=q.front();q.pop_front();vis[u]=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(re i=fi[u];i;i=e[i].nx)</div><div class="line">            <span class="keyword">if</span>(dis[v=e[i].to]&gt;dis[u]+e[i].w)&#123;</div><div class="line">                dis[v]=dis[u]+e[i].w;</div><div class="line">                <span class="keyword">if</span>(!vis[v])&#123;</div><div class="line">                    <span class="keyword">if</span>(q.empty()||dis[v]&gt;dis[q.front()])q.push_back(v);</div><div class="line">                    <span class="keyword">else</span> q.push_front(v);</div><div class="line">                    vis[v]=<span class="number">1</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">chk</span><span class="params">(re x)</span></span>&#123;<span class="keyword">return</span> S1[x]+T1[x]==S1[t1]&amp;&amp;S2[x]+T2[x]==S2[t2];&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	file(<span class="string">"together"</span>); </div><div class="line">    sdf(n);sdf(m);sdf(s1),sdf(t1);sdf(s2),sdf(t2);</div><div class="line">    fp(i,<span class="number">1</span>,m)&#123;re u,v,w;sdf(u),sdf(v),sdf(w);add(u,v,w),add(v,u,w);&#125;</div><div class="line">    spfa(s1,S1),spfa(t1,T1),spfa(s2,S2),spfa(t2,T2);</div><div class="line">    fp(i,<span class="number">1</span>,n)<span class="keyword">if</span>(chk(i))fp(j,i+<span class="number">1</span>,n)<span class="keyword">if</span>(chk(j))chkmax(ans,<span class="built_in">abs</span>(S1[i]-S1[j]));</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">求长度在[S,T]范围内的子序列平均值的最大值</div><div class="line">方法：</div><div class="line">可以二分平均值为k，记S[i]=S[i-1]+a[i]-k</div><div class="line">那么只要在[i-T+1,i-S+1]内存在j使得S[i]&gt;=S[j]</div><div class="line">当前的K就合法。</div></pre></td></tr></table></figure>
-<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><hr>
-<p><img src="http://a1.qpic.cn/psb?/V14BjkU23Kbdj5/xLhmmaLw4FdcTmKbq.YIJ*H0KJFZ2bEQYUwVCsp2E3U!/b/dJwAAAAAAAAA&amp;bo=4QFYAQAAAAADAJw!&amp;rf=viewer_4" alt=" "></p>
-<p>数学题，推公式。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最短路</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感想</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/20/10-20/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/10/26/逆序对/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          逆序对
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/10/19/鸣谢/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -344,9 +213,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
